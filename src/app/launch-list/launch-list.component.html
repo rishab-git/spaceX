@@ -1,0 +1,33 @@
+<h1>SpaceX Launch Programs</h1>
+<div class="content">
+    <div class="filter-container">
+        <strong>Filters</strong>
+        <div *ngFor="let item of filters;let i = index;">
+            <div class="filter-header">{{item.header}}</div>
+            <div class="option-container">
+                <div class="option" *ngFor="let option of item.options;">
+                    <span class="option-label" [ngClass]="{'active': item.header === 'Launch Year' ? selectedYear === option.label : item.header === 'Successful Launch' ? successfulLaunchFilter === option.label : successfulLandingFilter === option.label }" (click)="selectFilter(item.header, option.label)">{{option.label}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="launch-container">
+        <div class="launch-box" *ngFor="let launch of launches;">
+            <div class="mission-image" [ngStyle]="{'background-image': launch && launch.links && launch.links.mission_patch_small ? 'url(' + launch.links.mission_patch_small + ')' : 'none'}">
+
+            </div>
+            <strong class="mission-name">{{launch.mission_name}}</strong><br/>
+            <strong class="mission-detail-heading">Mission IDs:</strong>
+            <ul>
+                <li *ngFor="let missionId of launch.mission_id">{{missionId}}</li>
+            </ul>
+            <strong class="mission-detail-heading">Launch Year:</strong> {{launch.launch_year}}<br/>
+            <strong class="mission-detail-heading">Successful Launch:</strong> {{launch.launch_success}}<br/>
+            <strong class="mission-detail-heading">Successful Landing:</strong> {{launch.rocket.first_stage.cores[0].land_success ? launch.rocket.first_stage.cores[0].land_success : 'NA'}}
+
+        </div>
+    </div>
+</div>
+<footer>
+    <strong> Developed By: </strong>&nbsp; Rishabh Shukla
+</footer>

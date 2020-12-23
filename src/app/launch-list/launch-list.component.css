@@ -1,0 +1,146 @@
+        .content {
+            display: block;
+            max-width: 700px;
+            height: auto;
+        }
+        
+        .filter-container {
+            background-color: #fff;
+            padding: 10px;
+        }
+        
+        .filter-header {
+            text-align: center;
+            border-bottom: 1px solid rgb(90, 90, 90);
+            margin: 16px;
+        }
+        
+        .option-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+        
+        .option {
+            flex-basis: 46%;
+            text-align: center;
+            margin: 5px;
+        }
+        
+        .option-label {
+            background-color: rgb(197, 224, 155);
+            border-radius: 4px;
+            width: 80%;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .option-label.active {
+            background-color: rgb(124, 186, 1);
+        }
+        
+        .launch-container {
+            margin-top: 10px;
+        }
+        
+        .launch-box {
+            height: 400px;
+            background-color: #fff;
+            padding: 10px;
+            color: rgb(73, 81, 150);
+            margin-bottom: 10px;
+        }
+        
+        .mission-detail-heading {
+            color: #000;
+        }
+        
+        .mission-image {
+            height: 200px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-origin: content-box;
+            background-color: rgb(242, 242, 242);
+            padding: 10px;
+        }
+        /* Tablet View */
+        
+        @media (min-width: 701px) and (max-width: 1024px) {
+            .content {
+                display: flex;
+                flex-direction: row;
+                max-width: unset;
+                align-items: flex-start;
+                height: auto;
+            }
+            .filter-container {
+                flex-basis: 27%;
+            }
+            .launch-container {
+                flex-basis: 73%;
+                margin: 0 0 0 16px;
+            }
+            .launch-box {
+                height: auto;
+                margin-bottom: 10px;
+            }
+        }
+        /* Desktop View */
+        
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .content {
+                display: flex;
+                flex-direction: row;
+                max-width: unset;
+                align-items: flex-start;
+                height: auto;
+            }
+            .filter-container {
+                flex-basis: 20%;
+            }
+            .launch-container {
+                flex-basis: 80%;
+                margin: 0 0 0 16px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: stretch;
+            }
+            .launch-box {
+                flex-basis: 21.5%;
+                height: auto;
+                margin: 0 0 16px 16px;
+            }
+        }
+        /* Large Desktop View */
+        
+        @media (min-width: 1441px) {
+            .content {
+                display: flex;
+                flex-direction: row;
+                max-width: unset;
+                align-items: flex-start;
+                height: auto;
+            }
+            .filter-container {
+                flex-basis: 20%;
+            }
+            .launch-container {
+                flex-basis: 80%;
+                margin: 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: stretch;
+            }
+            .launch-box {
+                flex-basis: 21.5%;
+                height: auto;
+                margin: 0 0 16px 16px;
+            }
+        }
