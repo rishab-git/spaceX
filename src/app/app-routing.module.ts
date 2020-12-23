@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LaunchListComponent } from './launch-list/launch-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/launchList', pathMatch: 'full' },
+  { path: '', redirectTo: 'launchList', pathMatch: 'full' },
   { path: 'launchList', component: LaunchListComponent }
 ];
 
