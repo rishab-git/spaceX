@@ -14,7 +14,7 @@
         "prerender": "ng run spaceX-app:prerender",
         "startApp": "npm run build:ssr && npm run serve:ssr",
         "start:heroku": "node dist/server",
-        "postinstall": "npm run startApp"
+        "postinstall": "npm run build:ssr"
     },
     "private": true,
     "dependencies": {
