@@ -10,11 +10,11 @@
         "e2e": "ng e2e",
         "dev:ssr": "ng run spaceX-app:serve-ssr",
         "serve:ssr": "node dist/spaceX-app/server/main.js",
-        "build:ssr": "ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer && ng run spaceX-app:server:production",
+        "build:ssr": "ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer && ng run spaceX-app:server:production --bundleDependencies all",
         "prerender": "ng run spaceX-app:prerender",
         "startApp": "npm run build:ssr && npm run serve:ssr",
-        "start:heroku": "node dist/server",
-        "postinstall": "npm run build:ssr"
+        "postinstall": "npm run build:ssr",
+        "start:heroku": "node dist/server"
     },
     "private": true,
     "dependencies": {
