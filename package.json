@@ -3,7 +3,6 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
         "build": "ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
         "test": "ng test --watch=false",
         "lint": "ng lint",
@@ -14,7 +13,8 @@
         "prerender": "ng run spaceX-app:prerender",
         "startApp": "npm run build:ssr && npm run serve:ssr",
         "postinstall": "npm run build:ssr",
-        "start:heroku": "node dist/server"
+        "start:heroku": "node dist/server",
+        "start": "node index.js"
     },
     "private": true,
     "dependencies": {
