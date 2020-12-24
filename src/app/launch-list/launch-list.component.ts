@@ -122,32 +122,47 @@ export class LaunchListComponent implements OnInit {
   selectFilter(category, option) {
     switch(category) {
       case 'Launch Year': {
+        if(this.selectedYear && this.selectedYear === option) {
+          this.selectedYear = 0;
+          this.filterString = this.filterString.replace('&launch_year=' + option, '');
+        } else {
         this.selectedYear = option;
         if(this.filterString.indexOf('&launch_year=') > -1) {
           this.filterString = this.replaceAt(this.filterString, this.filterString.indexOf('&launch_year='), option, '&launch_year=');
         } else {
           this.filterString += '&launch_year=' + option;
         }
+      }
         console.log(this.filterString);
       }
         break;
       case 'Successful Launch': {
+        if(this.successfulLaunchFilter && this.successfulLaunchFilter === option) {
+          this.successfulLaunchFilter = '';
+          this.filterString = this.filterString.replace('&launch_success=' + option.toLowerCase(), '');
+        } else {
         this.successfulLaunchFilter = option;
         if(this.filterString.indexOf('&launch_success=') > -1) {
           this.filterString = this.replaceAt(this.filterString, this.filterString.indexOf('&launch_success='), option.toLowerCase(), '&launch_success=')
         } else {
           this.filterString += '&launch_success=' + option.toLowerCase();
         }
+      }
         console.log(this.filterString);
       }
         break;
       case 'Successful Landing':{
+        if(this.successfulLandingFilter && this.successfulLandingFilter === option) {
+          this.successfulLandingFilter = '';
+          this.filterString = this.filterString.replace('&land_success=' + option.toLowerCase(), '');
+        } else {
         this.successfulLandingFilter = option;
         if(this.filterString.indexOf('&land_success=') > -1) {
           this.filterString = this.replaceAt(this.filterString, this.filterString.indexOf('&land_success='), option.toLowerCase(), '&land_success=')
         } else {
           this.filterString += '&land_success=' + option.toLowerCase();
         }
+      }
         console.log(this.filterString);
       }
         break;

@@ -14,7 +14,7 @@
         "startApp": "npm run build:ssr && npm run serve:ssr",
         "postinstall": "npm run build:ssr",
         "start:heroku": "node dist/spaceX-app/server/main.js",
-        "start": "node index.js"
+        "start": "ng serve"
     },
     "private": true,
     "dependencies": {
